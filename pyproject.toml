@@ -1,0 +1,11 @@
+[project]
+name = "vaultlet"
+version = "1.0.0"
+description = "Securely inject env vars using Windows Credential Manager"
+authors = [{ name = "Steven Li", email = "stevenli6186@gmail.com" }]
+license = "MIT"
+dependencies = ["keyring"]
+
+[project.scripts]
+vaultlet = "vaultlet.__main__:main"
+vl = "vaultlet.__main__:main"
