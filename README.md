@@ -28,7 +28,7 @@ Vaultlet is inspired by [`envchain`](https://github.com/sorah/envchain), but des
 
 1. Clone this repository:
     ```powershell
-    git clone https://github.com/yourusername/vaultlet.git
+    git clone https://github.com/Vaultlet/Vaultlet.git
     cd vaultlet
     ```
 
