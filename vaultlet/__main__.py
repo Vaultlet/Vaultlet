@@ -53,3 +53,6 @@ def main():
         app_name = args[0]
         command = args[1:]
         run_with_secrets(app_name, command)
+
+if __name__ == "__main__":
+    main()
