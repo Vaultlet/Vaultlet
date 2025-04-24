@@ -2,7 +2,7 @@ import os
 import subprocess
 import keyring
 
-VAULTLET_VERSION = "1.0.0"
+VAULTLET_VERSION = "1.0.1"
 
 def run_with_secrets(app_name, command):
     keys = keyring.get_password(app_name, "__keys__")
@@ -17,8 +17,19 @@ def run_with_secrets(app_name, command):
         else:
             print(f"[vaultlet] Warning: No secret found for key '{key}'.")
 
-    result = subprocess.run(command, env=os.environ)
-    exit(result.returncode)
+    try:
+        # Ensure command is a list of strings
+        if not isinstance(command, list) or not all(isinstance(c, str) for c in command):
+            raise ValueError("Command must be a list of strings.")
+
+        result = subprocess.run(command, env=os.environ, check=True)
+        exit(result.returncode)
+    except subprocess.CalledProcessError as e:
+        print(f"[vaultlet] ❌ Command failed with exit code {e.returncode}")
+        exit(e.returncode)
+    except Exception as e:
+        print(f"[vaultlet] ⚠️  Error running command: {e}")
+        exit(1)
 
 def set_secret(app_name, key, value):
     keyring.set_password(app_name, key, value)
