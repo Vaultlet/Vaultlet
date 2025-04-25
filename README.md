@@ -24,31 +24,26 @@ Vaultlet is inspired by [`envchain`](https://github.com/sorah/envchain), but des
 
 ## Installation
 
-### From Source
+1. **Clone this repository**:
 
-1. Clone this repository:
     ```powershell
     git clone https://github.com/Vaultlet/Vaultlet.git
-    cd vaultlet
+    cd Vaultlet
     ```
 
-2. Install in editable mode:
+2. **Install Vaultlet**:
+
     ```powershell
     pip install -e .
     ```
 
-3. Add executables to PATH (only needs to be done once):
+3. **(Optional)** If the `vaultlet` or `vl` commands are not immediately recognized, run:
+
     ```powershell
     python post_install.py
     ```
 
-    > **Note:** You may need to open a new terminal window after running `post_install.py`.
-
-4. You'll now have access to both:
-    ```powershell
-    vaultlet    # main command
-    vl          # optional short alias
-    ```
+    > **Tip:** After running `post_install.py`, restart your terminal to refresh environment settings.
 
 ---
 
