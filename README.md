@@ -37,7 +37,14 @@ Vaultlet is inspired by [`envchain`](https://github.com/sorah/envchain), but des
     pip install -e .
     ```
 
-3. You'll now have access to both:
+3. Add executables to PATH (only needs to be done once):
+    ```powershell
+    python post_install.py
+    ```
+
+    > **Note:** You may need to open a new terminal window after running `post_install.py`.
+
+4. You'll now have access to both:
     ```powershell
     vaultlet    # main command
     vl          # optional short alias
