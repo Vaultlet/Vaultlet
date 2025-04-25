@@ -1,3 +1,7 @@
+[build-system]
+requires = ["setuptools", "wheel"]
+build-backend = "setuptools.build_meta"
+
 [project]
 name = "vaultlet"
 version = "1.0.0"
@@ -9,3 +13,6 @@ dependencies = ["keyring"]
 [project.scripts]
 vaultlet = "vaultlet.__main__:main"
 vl = "vaultlet.__main__:main"
+
+[tool.setuptools]
+cmdclass = { "install": "post_install:PostInstallCommand" }
