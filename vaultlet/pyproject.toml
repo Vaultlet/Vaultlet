@@ -4,7 +4,7 @@ build-backend = "setuptools.build_meta"
 
 [project]
 name = "vaultlet"
-version = "1.0.0"
+version = "1.0.1"
 description = "Securely inject env vars using Windows Credential Manager"
 authors = [{ name = "Steven Li", email = "stevenli6186@gmail.com" }]
 license = "MIT"
